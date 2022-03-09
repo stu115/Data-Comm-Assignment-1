@@ -29,10 +29,10 @@ while True:
 		# Read the request sent by the client at the connection socket
 		message =  socketThatConnects.recv(1024)
 		# Split the message received at the connection socket and decode it
-		filename = message.split()[1]
+	        filename = message.split()[1]
 		# The extracted path of the HTTP request has  a character '\'. We read the path from the character that's next 
 		f = open(filename[1:].decode())
-        databeingoutput = f.read()
+                databeingoutput = f.read()
 		# Start sending a reply to the clients request
 		socketThatConnects.send("HTTP/1.1 200 OK\r\n\r\n".encode())
  
