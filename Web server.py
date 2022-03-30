@@ -36,7 +36,7 @@ while True:
 		# Start sending a reply to the clients request
 		socketThatConnects.send("HTTP/1.1 200 OK\r\n\r\n".encode())
  
-		# Pass what is in the requested file to the connection socket  
+		# Pass what is in the requested file to the connection socket with the for loop  
 		for i in range(0, len(databeingoutput)):  
 			socketThatConnects.send(databeingoutput[i].encode())
 		socketThatConnects.send("\r\n".encode())
